@@ -1,5 +1,6 @@
-body {
-    
+  body {
+    color: #5a6275;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   h1 {
@@ -134,7 +135,5 @@ body {
   
   .row {
     margin: 5px auto;
-    color: #5a6275;
-    font-family: Arial, Helvetica, sans-serif;
   }
   
