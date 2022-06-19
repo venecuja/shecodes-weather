@@ -1,0 +1,138 @@
+body {
+  color: #5a6275;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px auto;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: left;
+  margin: 20px auto;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin: 5px auto;
+}
+
+input[type="search"] {
+  border: transparent;
+  font-size: 16px;
+}
+
+.search_input {
+  border: 1px solid #d2d2d2;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.search_value {
+  width: 85%;
+}
+
+.search {
+  border: transparent;
+  font-size: 16px;
+  background-color: transparent;
+  color: #d2d2d2;
+}
+
+.topcity_section {
+  margin: 40px 5px;
+}
+
+.city_section {
+  margin: 10px 5px;
+  font-size: 24px;
+}
+
+.city {
+  margin: 10px 5px;
+  font-weight: bold;
+}
+
+.today {
+  font-size: 16px;
+}
+
+.temp {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.metric {
+  font-size: 16px;
+  vertical-align: top;
+}
+
+.day {
+  width: 120px;
+  border: 1px solid #d2d2d2;
+  border-radius: 10px;
+  margin: 5px 5px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.topcity {
+  border: 1px solid #d2d2d2;
+  border-radius: 10px;
+  margin: 5px auto;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.t_day {
+  background-color: #fefce2;
+  border: 2px solid #f9f170;
+  width: 60px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.t_night {
+  background-color: #e8f4fe;
+  border: 2px solid #8ec9f9;
+  width: 60px;
+  position: relative;
+  left: 20px;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+}
+
+.icon_day {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  left: 70px;
+  bottom: 20px;
+  display: block;
+}
+
+.icon_top {
+  max-width: 60px;
+  height: 60px;
+  display: block;
+}
+
+.currentCity {
+  background-color: transparent;
+  border: 0;
+  width: 120px;
+  font-size: 12px;
+  font-style: italic;
+  text-align: left;
+  color: #0e6dfd;
+}
+
+.row {
+  margin: 5px auto;
+}
