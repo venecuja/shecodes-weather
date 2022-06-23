@@ -24,6 +24,19 @@
     border: transparent;
     font-size: 16px;
   }
+
+  ul {
+    list-style-type: none;
+  }
+
+  small {
+    margin: 20px
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 30px auto;
+  }
   
   .search_input {
     border: 1px solid #d2d2d2;
@@ -40,10 +53,6 @@
     font-size: 16px;
     background-color: transparent;
     color: #d2d2d2;
-  }
-  
-  .topcity_section {
-    margin: 40px 5px;
   }
   
   .city_section {
@@ -67,7 +76,9 @@
   
   .metric {
     font-size: 16px;
-    vertical-align: top;
+    vertical-align: center;
+    position: relative;
+    bottom: 20px; 
   }
   
   .day {
@@ -75,15 +86,6 @@
     border: 1px solid #d2d2d2;
     border-radius: 10px;
     margin: 5px 5px;
-    padding: 5px;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .topcity {
-    border: 1px solid #d2d2d2;
-    border-radius: 10px;
-    margin: 5px auto;
     padding: 5px;
     font-size: 16px;
     font-weight: bold;
@@ -114,12 +116,6 @@
     position: relative;
     left: 70px;
     bottom: 20px;
-    display: block;
-  }
-  
-  .icon_top {
-    max-width: 60px;
-    height: 60px;
     display: block;
   }
   

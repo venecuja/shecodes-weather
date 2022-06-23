@@ -31,6 +31,7 @@ function cityTemp(response) {
   console.log(response.data);
   let searchCity = document.querySelector("#searchCity");
   searchCity.innerHTML = response.data.name;
+
   let tempReplace = document.querySelector(`#temperature`);
   let tempApi = Math.round(response.data.main.temp);
   if (tempApi > 0) {
@@ -38,6 +39,20 @@ function cityTemp(response) {
   } else {
     tempReplace.innerHTML = `${tempApi}`;
   }
+
+  let feelsLike = document.querySelector(`#feels_like`);
+  let feelsLikeApi = Math.round(response.data.main.feels_like);
+  if (feelsLikeApi > 0) {
+    feelsLike.innerHTML = `+${feelsLikeApi}`;
+  } else {
+    feelsLike.innerHTML = `${feelsLikeApi}`;
+  }
+
+  let humidity = document.querySelector(`#humidity`);
+  humidity.innerHTML = response.data.main.humidity;
+
+  let speedApi = document.querySelector(`#speed`);
+  speedApi.innerHTML = response.data.wind.speed;
 }
 
 function celsiusCalculation(event) {
@@ -87,3 +102,6 @@ function currentCityTemp(event) {
 }
 
 currentCity.addEventListener("click", currentCityTemp);
+
+
+axios.get(`${apiUrl}q=Sumy&units=metric&appid=${apiKey}`).then(cityTemp)

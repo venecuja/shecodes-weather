@@ -25,12 +25,7 @@
       </h1>
 
       <div class="row">
-        <div class="col-7 city_section">
           <div class="row">
-            <label for="city-search">
-              Chose your city
-            </label>
-  
             <form id="searchCityForm" class="search_input">
               <input
                 type="search"
@@ -42,20 +37,22 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </form>
-            
           </div>
+
           <div class="row">
             <button type="submit" id="city-default" class="currentCity"> Current City
             </button>
           </div>
 
           <div class="row">
+            <h2 class="city" id="searchCity">
+              Kyiv
+            </h2>
+            <div class="today" id="today"></div>
+
             <div class="col-6">
-              <h2 class="city" id="searchCity">
-                Kyiv
-              </h2>
               <p>
-                <div class="today" id="today"></div>
+                <img src="img/cloud_sun.png" />
                 <span id="temperature" class="temp">
                     +18
                 </span>                 
@@ -65,12 +62,20 @@
                 </span>
               </p>
             </div>
-            <div class="col-4">
-              <img src="img/cloud_sun.png" />
+            <div class="col-6">
+              <ul>
+                <li>
+                  Feels like: <span id="feels_like">21.41 </span>°C
+                </li>
+                <li>
+                  Humidity: <span id="humidity">65</span>%
+                </li>
+                <li>
+                  Speed: <span id="speed">0.89</span>m/s
+                </li>
+              </ul>
             </div>
           </div>
-
-            
 
           <div class="row">
             <div class="card day">
@@ -104,53 +109,13 @@
               <div class="t_day">+14</div>
             </div>
           </div>
-        </div>
 
-        <div class="col-1">
-        </div>
-
-        <div class="col-2 topcity_section">
-          <div class="card topcity">
-            New York
-            <div class="row">
-              <div class="col-6">
-                <img src="img/cloud_sun.png" class="icon_top" />
-              </div>
-              <div class="col-6">
-                <div class="t_night">+10</div>
-                <div class="t_day">+17</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card topcity">
-            London
-            <div class="row">
-              <div class="col-6">
-                <img src="img/sun.png" class="icon_top" />
-              </div>
-              <div class="col-6">
-                <div class="t_night">+8</div>
-                <div class="t_day">+14</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card topcity">
-            Tokio
-            <div class="row">
-              <div class="col-6">
-                <img src="img/cloud_sun.png" class="icon_top" />
-              </div>
-              <div class="col-6">
-                <div class="t_night">+12</div>
-                <div class="t_day">+18</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+      <small>
+        <a href="https://github.com/venecuja/shecodes-weather">Open source code</a> by Tetiana Lysiana
+      </small>
     </div>
+    
     <script src="src/index.js"></script>
   </body>
 </html>
