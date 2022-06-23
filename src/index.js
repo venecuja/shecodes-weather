@@ -53,6 +53,10 @@ function cityTemp(response) {
 
   let speedApi = document.querySelector(`#speed`);
   speedApi.innerHTML = response.data.wind.speed;
+
+  let currentIcon = document.querySelector(`#current_icon`);
+  let currentIconApi = response.data.weather[0].icon;
+  currentIcon.setAttribute("src",`https://openweathermap.org/img/wn/${currentIconApi}@2x.png`);
 }
 
 function celsiusCalculation(event) {
@@ -60,7 +64,7 @@ function celsiusCalculation(event) {
   let searchCityValue = document.querySelector("#city-search");
   let city = searchCityValue.value;
   if (city) {
-    axios.get(`${apiUrl}q=${city}&units=metric&appid=${apiKey}`).then(cityTemp);
+    axios.get(`${apiUrl}q=${city}&units=metric&cnt=5&appid=${apiKey}`).then(cityTemp);
   }
 }
 
@@ -70,7 +74,7 @@ function fahrenheitCalculation(event) {
   let city = searchCityValue.value;
   if (city) {
     axios
-      .get(`${apiUrl}q=${city}&units=imperial&appid=${apiKey}`)
+      .get(`${apiUrl}q=${city}&units=imperial&cnt=5&appid=${apiKey}`)
       .then(cityTemp);
   }
 }
@@ -91,7 +95,7 @@ function handlePosition(position) {
   let longitude = position.coords.longitude;
   axios
     .get(
-      `${apiUrl}lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`
+      `${apiUrl}lat=${latitude}&lon=${longitude}&units=metric&cnt=5&appid=${apiKey}`
     )
     .then(cityTemp);
 }
@@ -104,4 +108,4 @@ function currentCityTemp(event) {
 currentCity.addEventListener("click", currentCityTemp);
 
 
-axios.get(`${apiUrl}q=Sumy&units=metric&appid=${apiKey}`).then(cityTemp)
+axios.get(`${apiUrl}q=Sumy&units=metric&cnt=5&appid=${apiKey}`).then(cityTemp)
