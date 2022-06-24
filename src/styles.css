@@ -30,12 +30,12 @@
   }
 
   small {
-    margin: 20px
+    margin: 5px;
   }
 
   .container {
     max-width: 700px;
-    margin: 30px auto;
+    margin: 30px auto 5px;
     border: 1px solid #d2d2d2;
     border-radius: 10px;
     padding: 5px;
