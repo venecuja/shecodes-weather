@@ -30,6 +30,7 @@ let searchForm = document.querySelector("#searchCityForm");
 
 function cityTemp(response) {
   console.log(response.data);
+
   let searchCity = document.querySelector("#searchCity");
   searchCity.innerHTML = response.data.name;
 
@@ -113,4 +114,4 @@ function currentCityTemp(event) {
 
 currentCity.addEventListener("click", currentCityTemp);
 
-axios.get(`${apiUrl}q=Kyiv&units=imperial&appid=${apiKey}`).then(cityTemp);
+axios.get(`${apiUrl}q=Kyiv&units=metric&appid=${apiKey}`).then(cityTemp);
