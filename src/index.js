@@ -24,6 +24,7 @@ if (minutes < 10) {
 let currentDay = document.querySelector("#today");
 currentDay.innerHTML = `${weekDay} ${hours}:${minutes}`;
 
+
 //Temperature in the city
 let searchForm = document.querySelector("#searchCityForm");
 
@@ -59,7 +60,7 @@ function cityTemp(response) {
   currentIcon.setAttribute("src",`https://openweathermap.org/img/wn/${currentIconApi}@2x.png`);
 }
 
-function celsiusCalculation(event) {
+function getTemp(event) {
   event.preventDefault();
   let searchCityValue = document.querySelector("#city-search");
   let city = searchCityValue.value;
@@ -68,26 +69,26 @@ function celsiusCalculation(event) {
   }
 }
 
-function fahrenheitCalculation(event) {
-  event.preventDefault();
-  let searchCityValue = document.querySelector("#city-search");
-  let city = searchCityValue.value;
-  if (city) {
-    axios
-      .get(`${apiUrl}q=${city}&units=imperial&cnt=5&appid=${apiKey}`)
-      .then(cityTemp);
-  }
-}
-
-let celsius = document.querySelector("#celsius");
-let fahrenheit = document.querySelector("#fahrenheit");
 let currentCity = document.querySelector("#city-default");
 
-searchForm.addEventListener("submit", celsiusCalculation);
+searchForm.addEventListener("submit", getTemp);
+
+//Metric calculation
+let celsius = document.querySelector("#celsius");
+let fahrenheit = document.querySelector("#fahrenheit");
 
 celsius.addEventListener("click", celsiusCalculation);
 fahrenheit.addEventListener("click", fahrenheitCalculation);
 
+function celsiusCalculation(tempApi) {
+  let currentCity= document.querySelector(`#searchCity`);
+  axios.get(`${apiUrl}q=${currentCity.innerHTML}&units=metric&cnt=5&appid=${apiKey}`).then(cityTemp);
+}
+
+function fahrenheitCalculation(tempApi) {
+  let currentCity= document.querySelector(`#searchCity`);
+  axios.get(`${apiUrl}q=${currentCity.innerHTML}&units=imperial&cnt=5&appid=${apiKey}`).then(cityTemp);
+}
 //Temperature by geolocation
 
 function handlePosition(position) {
