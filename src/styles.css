@@ -36,6 +36,9 @@
   .container {
     max-width: 700px;
     margin: 30px auto;
+    border: 1px solid #d2d2d2;
+    border-radius: 10px;
+    padding: 5px;
   }
   
   .search_input {
@@ -55,10 +58,7 @@
     color: #d2d2d2;
   }
   
-  .city_section {
-    margin: 10px 5px;
-    font-size: 24px;
-  }
+  
   
   .city {
     margin: 10px 5px;
@@ -80,45 +80,7 @@
     position: relative;
     bottom: 20px; 
   }
-  
-  .day {
-    width: 120px;
-    border: 1px solid #d2d2d2;
-    border-radius: 10px;
-    margin: 5px 5px;
-    padding: 5px;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .t_day {
-    background-color: #fefce2;
-    border: 2px solid #f9f170;
-    width: 60px;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .t_night {
-    background-color: #e8f4fe;
-    border: 2px solid #8ec9f9;
-    width: 60px;
-    position: relative;
-    left: 20px;
-    border-radius: 5px;
-    display: block;
-    text-align: center;
-  }
-  
-  .icon_day {
-    width: 40px;
-    height: 30px;
-    position: relative;
-    left: 70px;
-    bottom: 20px;
-    display: block;
-  }
-  
+
   .currentCity {
     background-color: transparent;
     border: 0;
@@ -133,3 +95,19 @@
     margin: 5px auto;
   }
   
+  .source_code {
+    text-align: center;
+    display: block;
+    margin: 2px, auto;
+  }
+
+  .active {
+    color: #5a6275;
+    cursor: default;
+    text-decoration: none;
+  }
+
+  .active:hover {
+    color: #5a6275;
+    text-decoration: none;
+  }

@@ -74,21 +74,27 @@ let currentCity = document.querySelector("#city-default");
 searchForm.addEventListener("submit", getTemp);
 
 //Metric calculation
+function celsiusCalculation(tempApi) {
+  fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
+  let currentCity= document.querySelector(`#searchCity`);
+  axios.get(`${apiUrl}q=${currentCity.innerHTML}&units=metric&cnt=5&appid=${apiKey}`).then(cityTemp);
+}
+
+function fahrenheitCalculation(tempApi) {
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let currentCity= document.querySelector(`#searchCity`);
+  axios.get(`${apiUrl}q=${currentCity.innerHTML}&units=imperial&cnt=5&appid=${apiKey}`).then(cityTemp);
+}
+
 let celsius = document.querySelector("#celsius");
 let fahrenheit = document.querySelector("#fahrenheit");
 
 celsius.addEventListener("click", celsiusCalculation);
 fahrenheit.addEventListener("click", fahrenheitCalculation);
 
-function celsiusCalculation(tempApi) {
-  let currentCity= document.querySelector(`#searchCity`);
-  axios.get(`${apiUrl}q=${currentCity.innerHTML}&units=metric&cnt=5&appid=${apiKey}`).then(cityTemp);
-}
 
-function fahrenheitCalculation(tempApi) {
-  let currentCity= document.querySelector(`#searchCity`);
-  axios.get(`${apiUrl}q=${currentCity.innerHTML}&units=imperial&cnt=5&appid=${apiKey}`).then(cityTemp);
-}
 //Temperature by geolocation
 
 function handlePosition(position) {
@@ -102,11 +108,9 @@ function handlePosition(position) {
 }
 
 function currentCityTemp(event) {
-  //handlePosition();
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
 currentCity.addEventListener("click", currentCityTemp);
 
-
-axios.get(`${apiUrl}q=Sumy&units=metric&cnt=5&appid=${apiKey}`).then(cityTemp)
+currentCityTemp();
