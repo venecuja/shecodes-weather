@@ -111,3 +111,7 @@
     color: #5a6275;
     text-decoration: none;
   }
+
+  #description:first-letter {
+    text-transform: capitalize;
+  }

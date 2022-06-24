@@ -56,6 +56,9 @@ function cityTemp(response) {
   let speedApi = document.querySelector(`#speed`);
   speedApi.innerHTML = response.data.wind.speed;
 
+  let descriptionApi = document.querySelector(`#description`);
+  descriptionApi.innerHTML = response.data.weather[0].description;
+
   let currentIcon = document.querySelector(`#current_icon`);
   let currentIconApi = response.data.weather[0].icon;
   currentIcon.setAttribute("src",`https://openweathermap.org/img/wn/${currentIconApi}@2x.png`);
