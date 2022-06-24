@@ -65,7 +65,7 @@ function getTemp(event) {
   let searchCityValue = document.querySelector("#city-search");
   let city = searchCityValue.value;
   if (city) {
-    axios.get(`${apiUrl}q=${city}&units=metric&cnt=5&appid=${apiKey}`).then(cityTemp);
+    axios.get(`${apiUrl}q=${city}&units=metric&appid=${apiKey}`).then(cityTemp);
   }
 }
 
@@ -78,14 +78,14 @@ function celsiusCalculation(tempApi) {
   fahrenheit.classList.remove("active");
   celsius.classList.add("active");
   let currentCity= document.querySelector(`#searchCity`);
-  axios.get(`${apiUrl}q=${currentCity.innerHTML}&units=metric&cnt=5&appid=${apiKey}`).then(cityTemp);
+  axios.get(`${apiUrl}q=${currentCity.innerHTML}&units=metric&appid=${apiKey}`).then(cityTemp);
 }
 
 function fahrenheitCalculation(tempApi) {
   celsius.classList.remove("active");
   fahrenheit.classList.add("active");
   let currentCity= document.querySelector(`#searchCity`);
-  axios.get(`${apiUrl}q=${currentCity.innerHTML}&units=imperial&cnt=5&appid=${apiKey}`).then(cityTemp);
+  axios.get(`${apiUrl}q=${currentCity.innerHTML}&units=imperial&appid=${apiKey}`).then(cityTemp);
 }
 
 let celsius = document.querySelector("#celsius");
@@ -102,7 +102,7 @@ function handlePosition(position) {
   let longitude = position.coords.longitude;
   axios
     .get(
-      `${apiUrl}lat=${latitude}&lon=${longitude}&units=metric&cnt=5&appid=${apiKey}`
+      `${apiUrl}lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`
     )
     .then(cityTemp);
 }
@@ -113,4 +113,4 @@ function currentCityTemp(event) {
 
 currentCity.addEventListener("click", currentCityTemp);
 
-currentCityTemp();
+axios.get(`${apiUrl}q=Kyiv&units=imperial&appid=${apiKey}`).then(cityTemp);
