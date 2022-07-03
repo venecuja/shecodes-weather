@@ -40,7 +40,6 @@ function formatDay(timeStamp) {
 //Display forecast
 
 function displayForecast (response) {
-  console.log(response.data.daily);
 
   let forecast=document.querySelector("#week-weather");
   let dayForecast = response.data.daily;

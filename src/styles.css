@@ -118,6 +118,7 @@
 
 .t_night {
   font-size: 13px;
+  opacity: .5;
 }
 
 .date_day {
