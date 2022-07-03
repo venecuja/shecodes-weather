@@ -116,15 +116,14 @@
     text-transform: capitalize;
   }
 
-
-.t_day {
-  
-}
-
 .t_night {
   font-size: 13px;
 }
 
 .date_day {
   font-weight: bold;
+}
+
+.col-2 {
+  text-align: center;
 }

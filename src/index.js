@@ -51,8 +51,8 @@ function displayForecast (response) {
     dataForecast+=`<div class="col-2">
     <div class="date_day">${formatDay(day.dt)}</div>
     <div><img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" class="icon_day" /></div>
-    <span class="t_day">${Math.round(day.temp.day)}°</span>
-    <span class="t_night">${Math.round(day.temp.night)}°</span>
+    <span class="t_day">${Math.round(day.temp.max)}°</span>
+    <span class="t_night">${Math.round(day.temp.min)}°</span>
   </div>`
   });
   forecast.innerHTML=dataForecast
